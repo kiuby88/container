@@ -95,7 +95,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "tNodeTemplate", propOrder = {"requirements", "capabilities", "policies", "deploymentArtifacts"})
+@XmlType(name = "tNodeTemplate", propOrder = {"location","requirements", "capabilities", "policies", "deploymentArtifacts"})
 public class TNodeTemplate extends TEntityTemplate {
 	
 	@XmlElement(name = "Requirements")
@@ -112,6 +112,8 @@ public class TNodeTemplate extends TEntityTemplate {
 	protected Integer minInstances;
 	@XmlAttribute(name = "maxInstances")
 	protected String maxInstances;
+    @XmlElement(name = "Location")
+    protected TLocation location;
 	
 	
 	/**
@@ -261,7 +263,19 @@ public class TNodeTemplate extends TEntityTemplate {
 	public void setMaxInstances(String value) {
 		this.maxInstances = value;
 	}
-	
+
+    /**
+     * Return the elements of the NodeTemplate
+     */
+
+    public TLocation getLocation(){
+        return location;
+    }
+
+    public void setLocation(TLocation tLocation){
+        location=tLocation;
+    }
+
 	
 	/**
 	 * <p>
@@ -448,5 +462,6 @@ public class TNodeTemplate extends TEntityTemplate {
 		}
 		
 	}
+
 	
 }
