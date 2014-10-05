@@ -12,6 +12,7 @@
 package org.opentosca.model.tosca;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -82,5 +83,27 @@ public class TTopologyTemplate extends TExtensibleElements {
 		}
 		return this.nodeTemplateOrRelationshipTemplate;
 	}
+
+
+    public List<TRelationshipTemplate> getRelationshipTempaltes(){
+        List<TRelationshipTemplate> relationshipTemplates=new LinkedList<TRelationshipTemplate>();
+        for (TEntityTemplate entityTemplate: getNodeTemplateOrRelationshipTemplate()){
+            if(entityTemplate instanceof TRelationshipTemplate){
+                relationshipTemplates.add(((TRelationshipTemplate)entityTemplate));
+            }
+        }
+        return relationshipTemplates;
+    }
+
+
+    public List<TNodeTemplate> getNodeTempaltes(){
+        List<TNodeTemplate> nodeTemplates=new LinkedList<TNodeTemplate>();
+        for (TEntityTemplate entityTemplate: getNodeTemplateOrRelationshipTemplate()){
+            if(entityTemplate instanceof TNodeTemplate){
+                nodeTemplates.add(((TNodeTemplate) entityTemplate));
+            }
+        }
+        return nodeTemplates;
+    }
 	
 }

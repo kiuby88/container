@@ -213,7 +213,7 @@ public class TNodeTemplate extends TEntityTemplate {
 	 * 
 	 */
 	public void setName(String value) {
-		this.name = value;
+        this.name = value;
 	}
 	
 	/**

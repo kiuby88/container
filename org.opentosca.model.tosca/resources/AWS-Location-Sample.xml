@@ -48,11 +48,11 @@
 			<!-- ___________ JBoss Pay Web Server -->
 			<NodeTemplate id="JBossPayWebServer" name="JBoss Pay Web Server"
 				type="JBossWebServer">
-				<Properties>
-					<ns2:JBossWebServerProperties>
-						<httpdport>80</httpdport>
-					</ns2:JBossWebServerProperties>
-				</Properties>
+                <Properties>
+                    <ns2:JBossWebServerProperties>
+                        <httpdport>80</httpdport>
+                    </ns2:JBossWebServerProperties>
+                </Properties>
                 <Location locationId="AWS"/>
 				<Capabilities>
 					<Capability id="JBossPayWebServer_webapps" name="webapps"
