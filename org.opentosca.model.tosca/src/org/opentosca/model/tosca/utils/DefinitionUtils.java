@@ -53,6 +53,10 @@ public class DefinitionUtils {
         return serviceTemplate;
     }
 
+    public static TServiceTemplate getServiceTemplate(File file){
+        return getServiceTemplate(getDefinitions(file));
+    }
+
     public static TTopologyTemplate getTopology(TServiceTemplate serviceTemplate){
         return serviceTemplate.getTopologyTemplate();
     }
@@ -106,6 +110,4 @@ public class DefinitionUtils {
         }
         return propertyMap;
     }
-
-
 }
